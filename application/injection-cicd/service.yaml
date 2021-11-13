@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: devfest-injection-cicd
+  name: injection-cicd
   labels:
-    app: devfest-injection-cicd
+    app: injection-cicd
 spec:
   type: ClusterIP
   ports:
@@ -12,5 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: devfest-injection-cicd
-    release: devfest-injection-cicd
+    app: injection-cicd
