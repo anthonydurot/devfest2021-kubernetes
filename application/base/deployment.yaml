@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devfest-base
+  name: base
   labels:
-    app: devfest-base
+    app: base
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: devfest-base
+      app: base
   template:
     metadata:
       labels:
-        app: devfest-base
+        app: base
     spec:
       containers:
-        - name: devfest-base
+        - name: base
           image: "ghcr.io/anthonydurot/devfest-2021:main"
           imagePullPolicy: Always
           ports:
