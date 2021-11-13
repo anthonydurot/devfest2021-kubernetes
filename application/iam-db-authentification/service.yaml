@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: iam-db-authentification
+  name: iam-db-authentification
+  labels:
+    app: iam-db-authentification
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app: iam-db-authentification
+    release: iam-db-authentification

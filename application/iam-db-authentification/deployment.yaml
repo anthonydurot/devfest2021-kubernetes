@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: iam-db-authentification
+  name: iam-db-authentification
+  labels:
+    app: iam-db-authentification
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: iam-db-authentification
+  template:
+    metadata:
+      labels:
+        app: iam-db-authentification
+    spec:
+      containers:
+        - name: helm-guestbook
+          image: "ghcr.io/anthonydurot/devfest-2021:iam-db-authent"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
