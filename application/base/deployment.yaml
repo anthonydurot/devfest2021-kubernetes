@@ -26,15 +26,15 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: database_credentials
-                  key: username
+                  name: database-credentials
+                  key: password
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 secretKeyRef:
-                  name: database_credentials
-                  key: username
+                  name: database-credentials
+                  key: url
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: database_credentials
+                  name: database-credentials
                   key: username
