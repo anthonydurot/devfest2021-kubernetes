@@ -1,0 +1,4 @@
+config:
+  hsts: "false"
+  hsts-include-subdomain: "false"
+  ssl-redirectl: "false"
