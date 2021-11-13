@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devfest-vault-java
+  name: java-vault
   labels:
-    app: devfest-vault-java
+    app: java-vault
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: devfest-vault-java
+      app: java-vault
   template:
     metadata:
       labels:
-        app: devfest-vault-java
+        app: java-vault
     spec:
       containers:
-        - name: devfest-vault-java
+        - name: java-vault
           image: "ghcr.io/anthonydurot/devfest-2021:recuperation-vault"
           imagePullPolicy: Always
           ports:

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devfest-java-secret-manager
+  name: java-secret-manager
   labels:
-    app: devfest-java-secret-manager
+    app: java-secret-manager
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: devfest-java-secret-manager
+      app: java-secret-manager
   template:
     metadata:
       labels:
-        app: devfest-java-secret-manager
+        app: java-secret-manager
     spec:
       serviceAccountName: devfest
       containers:
-        - name: devfest-java-secret-manager
+        - name: java-secret-manager
           image: "ghcr.io/anthonydurot/devfest-2021:recuperation-java-secrets-manager"
           imagePullPolicy: Always
           ports:

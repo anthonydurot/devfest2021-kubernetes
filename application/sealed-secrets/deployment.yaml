@@ -1,26 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: injection-cicd
-  name: injection-cicd
+  name: sealed-secrets
   labels:
-    app: injection-cicd
+    app: sealed-secrets
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: injection-cicd
+      app: sealed-secrets
   template:
     metadata:
       labels:
-        app: injection-cicd
+        app: sealed-secrets
     spec:
       containers:
-        - name: helm-guestbook
-          image: "ghcr.io/anthonydurot/devfest-2021:injection-secret-cicd"
+        - name: sealed-secrets
+          image: "ghcr.io/anthonydurot/devfest-2021:sealed-secrets"
           imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
+
