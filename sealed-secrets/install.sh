@@ -1,0 +1,1 @@
+helm install my-sealed-secrets bitnami-labs/sealed-secrets --version 1.16.1 --namespace sealed-secrets --create-namespace
