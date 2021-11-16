@@ -1,0 +1,2 @@
+env:
+  VAULT_ADDR: "vault.vault.svc.cluster.local"
